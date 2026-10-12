@@ -1,0 +1,53 @@
+name: "🧩 Nhiệm vụ mới"
+description: "Thêm 1 việc mới vào kế hoạch (ngoài các Issue T01–T26 đã tạo tự động)"
+title: "Txx · <việc cần làm> · hạn dd/mm"
+labels: ["nhiệm vụ"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Mỗi việc phải trả lời được 3 câu: **cần có gì trước**, **nộp ra cái gì**, **thế nào là xong**.
+        Nhớ chọn **Assignees** và **Milestone** ở cột bên phải sau khi tạo.
+  - type: dropdown
+    id: nguoi
+    attributes:
+      label: Người phụ trách
+      options: ["Phúc", "Hoàng Duyên", "Đức Tâm", "Yến Trinh", "Cả nhóm"]
+    validations:
+      required: true
+  - type: input
+    id: thoi_gian
+    attributes:
+      label: Bắt đầu → Hạn chót
+      placeholder: "16/10 → 18/10"
+    validations:
+      required: true
+  - type: textarea
+    id: dau_vao
+    attributes:
+      label: Cần có trước (đầu vào)
+      description: File, kết quả hoặc việc của người khác phải xong trước
+      placeholder: "train_ner.py (T10) đã merge; configs/common.json"
+    validations:
+      required: true
+  - type: textarea
+    id: dau_ra
+    attributes:
+      label: Kết quả bàn giao (đầu ra)
+      placeholder: "results/xlmr_seed42.json, results/xlmr_seed123.json, results/xlmr_seed2024.json"
+    validations:
+      required: true
+  - type: textarea
+    id: xong_khi
+    attributes:
+      label: Xong khi (mỗi dòng 1 tiêu chí kiểm tra được)
+      value: |
+        - [ ]
+        - [ ]
+    validations:
+      required: true
+  - type: input
+    id: gan_voi
+    attributes:
+      label: Gắn với mục nào trong báo cáo / yêu cầu nào của cô
+      placeholder: "Mục 4.3.3 · BC1 mục (4)"

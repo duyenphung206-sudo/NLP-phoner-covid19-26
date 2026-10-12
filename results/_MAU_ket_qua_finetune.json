@@ -1,0 +1,45 @@
+{
+  "_ghi_chu": "FILE MẪU — không phải kết quả thật. Tên file thật: results/{khoa_mo_hinh}_seed{seed}.json. 8 trường đầu do metrics.tinh_metrics() tạo; các trường sau do train_ner.py ghép thêm.",
+  "ten_mo_hinh": "xlmr seed 42",
+  "che_do_cham": "strict_IOB2",
+  "so_thuc_the": 11735,
+  "precision_micro": null,
+  "recall_micro": null,
+  "f1_micro": null,
+  "f1_macro": null,
+  "f1_tung_loai": {
+    "PATIENT_ID": null,
+    "NAME": null,
+    "AGE": null,
+    "GENDER": null,
+    "JOB": null,
+    "LOCATION": null,
+    "ORGANIZATION": null,
+    "SYMPTOM_AND_DISEASE": null,
+    "TRANSPORTATION": null,
+    "DATE": null
+  },
+  "khoa_mo_hinh": "xlmr",
+  "model": "xlm-roberta-base",
+  "muc_du_lieu": "muc_am_tiet",
+  "seed": 42,
+  "best_epoch": null,
+  "f1_micro_dev": null,
+  "sieu_tham_so": {
+    "lr": 5e-05,
+    "batch_size": 16,
+    "gradient_accumulation_steps": 2,
+    "so_epoch_toi_da": 15,
+    "dung_som_sau": 3,
+    "max_length": 256,
+    "fp16": true
+  },
+  "thoi_gian_train_giay": null,
+  "thu_vien": {
+    "transformers": "x.y.z",
+    "torch": "x.y.z",
+    "seqeval": "x.y.z"
+  },
+  "moi_truong": "Colab T4 / Kaggle P100 / ...",
+  "nguoi_chay": "Đức Tâm"
+}

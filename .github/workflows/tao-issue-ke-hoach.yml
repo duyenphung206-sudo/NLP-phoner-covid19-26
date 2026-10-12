@@ -1,0 +1,38 @@
+# Bấm tay để chạy: tab Actions → "Tạo Issue từ kế hoạch" → Run workflow.
+# Tạo nhãn, milestone "BC1 — ..." và 1 Issue cho mỗi việc trong plan/tasks_bc1.json.
+# Chạy lại nhiều lần vẫn an toàn (Issue trùng tiêu đề sẽ được bỏ qua).
+name: Tạo Issue từ kế hoạch
+
+on:
+  workflow_dispatch:
+    inputs:
+      ke_hoach:
+        description: "File kế hoạch"
+        required: true
+        default: "plan/tasks_bc1.json"
+      chay_thu:
+        description: "Chỉ chạy thử, không tạo gì?"
+        required: true
+        default: "false"
+        type: choice
+        options: ["false", "true"]
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  tao-issue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Lấy mã nguồn
+        uses: actions/checkout@v5
+
+      - name: Tạo nhãn, milestone và Issue
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          KE_HOACH: ${{ inputs.ke_hoach }}
+          CHAY_THU: ${{ inputs.chay_thu }}
+        run: |
+          node --version
+          node .github/scripts/tao_issue_tu_ke_hoach.mjs

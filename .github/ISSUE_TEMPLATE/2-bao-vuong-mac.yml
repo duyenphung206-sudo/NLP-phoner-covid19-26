@@ -1,0 +1,39 @@
+name: "🚧 Báo vướng mắc"
+description: "Đang bị chặn hoặc gặp lỗi không tự sửa được — báo để cả nhóm giúp"
+title: "[Vướng] <mô tả ngắn>"
+labels: ["vướng mắc"]
+body:
+  - type: input
+    id: viec
+    attributes:
+      label: Đang làm việc nào?
+      placeholder: "#16 · T16 Fine-tune XLM-R"
+    validations:
+      required: true
+  - type: textarea
+    id: van_de
+    attributes:
+      label: Chuyện gì xảy ra?
+      description: Dán nguyên thông báo lỗi (đặt trong ``` ```), kèm ảnh chụp nếu có
+    validations:
+      required: true
+  - type: textarea
+    id: da_thu
+    attributes:
+      label: Đã thử những gì?
+      placeholder: "Giảm batch size 16 → 8 vẫn hết bộ nhớ GPU…"
+  - type: dropdown
+    id: muc_do
+    attributes:
+      label: Mức độ ảnh hưởng
+      options:
+        - "Chặn hoàn toàn — không làm tiếp được"
+        - "Làm chậm — vẫn làm được phần khác"
+        - "Nhỏ — cần ý kiến"
+    validations:
+      required: true
+  - type: input
+    id: can_ai
+    attributes:
+      label: Cần ai giúp?
+      placeholder: "@... (người viết train_ner.py)"

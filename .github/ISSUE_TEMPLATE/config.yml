@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 📋 Kế hoạch đến Báo cáo tiến độ 1
+    url: https://github.com/duyenphung206-sudo/nlp-de26-phoner-covid19/blob/main/docs/KE_HOACH_BC1.md
+    about: Xem danh sách việc, người phụ trách và hạn chót trước khi tạo Issue mới

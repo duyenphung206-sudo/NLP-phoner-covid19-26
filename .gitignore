@@ -1,0 +1,39 @@
+# ===== Dữ liệu: KHÔNG đưa lên GitHub (giấy phép PhoNER_COVID19 không cho phát tán lại) =====
+data/*
+!data/README.md
+PhoNER_COVID19*/
+
+# ===== Mô hình, checkpoint: lưu trên Google Drive / Hugging Face Hub, không commit =====
+checkpoints/
+outputs/
+runs/
+wandb/
+*.pkl
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.ckpt
+*.onnx
+
+# ===== File nén, file tạm =====
+*.zip
+*.rar
+*.7z
+~$*
+*.tmp
+
+# ===== Python / Jupyter =====
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+.env
+
+# ===== Hệ điều hành / editor =====
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/

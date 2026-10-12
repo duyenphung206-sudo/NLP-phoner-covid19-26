@@ -1,0 +1,10 @@
+# Chuẩn hóa xuống dòng giữa Windows / macOS / Colab
+* text=auto
+*.ipynb text eol=lf
+*.py text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.docx binary
+*.xlsx binary
+*.pdf binary
+*.png binary

@@ -1,0 +1,673 @@
+{
+  "_ghi_chu": "File kế hoạch cho Báo cáo tiến độ 1. Workflow 'Tạo Issue từ kế hoạch' đọc file này. Sửa xong thì chạy lại workflow: Issue đã có sẽ được bỏ qua.",
+  "milestone": {
+    "title": "BC1 — Báo cáo tiến độ 1 (22/10/2026)",
+    "due_on": "2026-10-22T16:59:00Z",
+    "description": "5 mục cô yêu cầu: (1) tóm tắt bài báo + mục tiêu; (2) thống kê dữ liệu; (3) kết quả baseline + zero-shot có số; (4) tiến độ fine-tune 3 kiến trúc; (5) phân công 4 vai trò + % hoàn thành."
+  },
+  "labels": [
+    {
+      "name": "vai trò 1: baseline + zero-shot",
+      "color": "1D76DB",
+      "description": "Phúc — CRF, zero-shot, nâng cao"
+    },
+    {
+      "name": "vai trò 2: PhoBERT",
+      "color": "0E8A16",
+      "description": "Hoàng Duyên — PhoBERT, train_ner.py"
+    },
+    {
+      "name": "vai trò 3: XLM-R",
+      "color": "FBCA04",
+      "description": "Đức Tâm — XLM-R, dữ liệu, phân tích lỗi"
+    },
+    {
+      "name": "vai trò 4: mBERT + demo",
+      "color": "D93F0B",
+      "description": "Yến Trinh — mBERT, demo, tóm tắt bài báo"
+    },
+    {
+      "name": "cả nhóm",
+      "color": "5319E7",
+      "description": "Việc chung của cả 4 người"
+    },
+    {
+      "name": "code",
+      "color": "C5DEF5",
+      "description": "Viết hoặc chạy code"
+    },
+    {
+      "name": "viết báo cáo",
+      "color": "BFD4F2",
+      "description": "Viết/ráp báo cáo"
+    },
+    {
+      "name": "họp / nộp",
+      "color": "F9D0C4",
+      "description": "Họp nhóm, nộp bài"
+    },
+    {
+      "name": "github",
+      "color": "EDEDED",
+      "description": "Thiết lập repo, quy trình"
+    },
+    {
+      "name": "vướng mắc",
+      "color": "B60205",
+      "description": "Đang bị chặn, cần giúp"
+    },
+    {
+      "name": "nhiệm vụ",
+      "color": "0052CC",
+      "description": "Nhiệm vụ tạo từ mẫu Issue"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T01",
+      "tieu_de": "T01 · Họp online chốt lịch mới + cách làm GitHub · hạn 12/10",
+      "nguoi": [
+        "Phúc",
+        "Hoàng Duyên",
+        "Đức Tâm",
+        "Yến Trinh"
+      ],
+      "bat_dau": "12/10",
+      "han": "12/10",
+      "ngay_cong": 0,
+      "dau_vao": "Bảng phân công v3; docs/QUY_UOC_CHUNG.md trong repo",
+      "dau_ra": "Biên bản họp: docs/bien-ban-hop/2026-10-12_chot-lich-moi.md trong repo",
+      "xong_khi": [
+        "4 người xác nhận vai trò + ngày hạn",
+        "hợp đồng chung không còn mục “chưa chốt”"
+      ],
+      "gan_voi": "Hồ sơ dự án",
+      "nhan": [
+        "cả nhóm",
+        "họp / nộp"
+      ],
+      "trang_thai": "Chưa làm",
+      "mo_ta_day_du": "Họp online 30 phút tối 12/10 (Hoàng Duyên chủ trì): chốt lịch mới 12/10 → 22/10, hợp đồng chung, cách làm việc trên GitHub"
+    },
+    {
+      "id": "T02",
+      "tieu_de": "T02 · Tạo repo, mời thành viên, bật Project, tạo Issue · hạn 12/10",
+      "nguoi": [
+        "Hoàng Duyên"
+      ],
+      "bat_dau": "12/10",
+      "han": "12/10",
+      "ngay_cong": 0.5,
+      "dau_vao": "Thư mục khung nlp-de26-phoner-covid19; hướng dẫn docs/HUONG_DAN_1_TAO_REPO.md",
+      "dau_ra": "Repo có đủ khung; Milestone “BC1 — 22/10” với Issue T01–T26; Project board tự thêm Issue",
+      "xong_khi": [
+        "3 bạn đã nhận lời mời và clone được",
+        "trang Milestones hiện BC1 có đủ Issue",
+        "ô Assignees của Issue đúng người"
+      ],
+      "gan_voi": "Phụ lục A",
+      "nhan": [
+        "vai trò 2: PhoBERT",
+        "github"
+      ],
+      "trang_thai": "Chưa làm",
+      "mo_ta_day_du": "Tạo repo GitHub (private) + đưa bộ khung lên + mời 3 bạn + bật Project board + chạy workflow tạo Issue cho BC1"
+    },
+    {
+      "id": "T03",
+      "tieu_de": "T03 · Setup + đưa baseline/zero-shot đã làm lên repo (Phúc) · hạn 13/10",
+      "nguoi": [
+        "Phúc"
+      ],
+      "bat_dau": "12/10",
+      "han": "13/10",
+      "ngay_cong": 0.5,
+      "dau_vao": "Thư mục “baseline CRF + zero-shot” đã có; hướng dẫn docs/HUONG_DAN_2_THANH_VIEN.md",
+      "dau_ra": "notebooks/00_setup_phuc.ipynb, notebooks/01_baseline_crf_zeroshot_phuc.ipynb, src/metrics.py, results/crf.json, results/zeroshot.json, results/phan_tich/*.csv",
+      "xong_khi": [
+        "PR được merge",
+        "KHÔNG có file .pkl hay dữ liệu gốc trong PR",
+        "số trong results/*.json khớp notebook"
+      ],
+      "gan_voi": "4.5 · BC1 mục (4)",
+      "nhan": [
+        "vai trò 1: baseline + zero-shot",
+        "github"
+      ],
+      "trang_thai": "Đang làm",
+      "mo_ta_day_du": "Setup + đưa phần baseline/zero-shot đã làm lên repo (qua Pull Request)"
+    },
+    {
+      "id": "T04",
+      "tieu_de": "T04 · Setup môi trường + clone repo + PR thử (Duyên) · hạn 13/10",
+      "nguoi": [
+        "Hoàng Duyên"
+      ],
+      "bat_dau": "12/10",
+      "han": "13/10",
+      "ngay_cong": 0.5,
+      "dau_vao": "Repo nhóm; repo VinAI (data/word và data/syllable, file .json khóa “words”/“tags”)",
+      "dau_ra": "notebooks/00_setup_duyen.ipynb được merge vào main",
+      "xong_khi": [
+        "Notebook in ra GPU (T4/P100) và đọc được train/dev/test = 5.027 / 2.000 / 3.000 câu",
+        "PR đầu tiên được merge"
+      ],
+      "gan_voi": "4.5 · BC1 mục (4)",
+      "nhan": [
+        "vai trò 2: PhoBERT",
+        "github"
+      ],
+      "trang_thai": "Chưa làm",
+      "mo_ta_day_du": "Setup Colab/Kaggle + nhận lời mời repo + clone bằng GitHub Desktop + mở 1 Pull Request thử"
+    },
+    {
+      "id": "T05",
+      "tieu_de": "T05 · Setup môi trường + clone repo + PR thử (Tâm) · hạn 13/10",
+      "nguoi": [
+        "Đức Tâm"
+      ],
+      "bat_dau": "12/10",
+      "han": "13/10",
+      "ngay_cong": 0.5,
+      "dau_vao": "Repo nhóm; repo VinAI (data/word và data/syllable, file .json khóa “words”/“tags”)",
+      "dau_ra": "notebooks/00_setup_tam.ipynb được merge vào main",
+      "xong_khi": [
+        "Notebook in ra GPU (T4/P100) và đọc được train/dev/test = 5.027 / 2.000 / 3.000 câu",
+        "PR đầu tiên được merge"
+      ],
+      "gan_voi": "4.5 · BC1 mục (4)",
+      "nhan": [
+        "vai trò 3: XLM-R",
+        "github"
+      ],
+      "trang_thai": "Chưa làm",
+      "mo_ta_day_du": "Setup Colab/Kaggle + nhận lời mời repo + clone bằng GitHub Desktop + mở 1 Pull Request thử"
+    },
+    {
+      "id": "T06",
+      "tieu_de": "T06 · Setup môi trường + clone repo + PR thử (Trinh) · hạn 13/10",
+      "nguoi": [
+        "Yến Trinh"
+      ],
+      "bat_dau": "12/10",
+      "han": "13/10",
+      "ngay_cong": 0.5,
+      "dau_vao": "Repo nhóm; repo VinAI (data/word và data/syllable, file .json khóa “words”/“tags”)",
+      "dau_ra": "notebooks/00_setup_trinh.ipynb được merge vào main",
+      "xong_khi": [
+        "Notebook in ra GPU (T4/P100) và đọc được train/dev/test = 5.027 / 2.000 / 3.000 câu",
+        "PR đầu tiên được merge"
+      ],
+      "gan_voi": "4.5 · BC1 mục (4)",
+      "nhan": [
+        "vai trò 4: mBERT + demo",
+        "github"
+      ],
+      "trang_thai": "Chưa làm",
+      "mo_ta_day_du": "Setup Colab/Kaggle + nhận lời mời repo + clone bằng GitHub Desktop + mở 1 Pull Request thử"
+    },
+    {
+      "id": "T07",
+      "tieu_de": "T07 · Viết data.py + file cấu hình chung · hạn 13/10",
+      "nguoi": [
+        "Đức Tâm"
+      ],
+      "bat_dau": "12/10",
+      "han": "13/10",
+      "ngay_cong": 1,
+      "dau_vao": "Dữ liệu VinAI; hợp đồng chung (01); có thể tái dùng hàm doc_file_json trong notebook 01 của Phúc",
+      "dau_ra": "src/data.py, configs/common.json",
+      "xong_khi": [
+        "1 lệnh in đúng số câu cho cả bản mức từ và âm tiết",
+        "0 câu lệch số từ – số nhãn",
+        "3 bạn import dùng được"
+      ],
+      "gan_voi": "3.3",
+      "nhan": [
+        "vai trò 3: XLM-R",
+        "viết báo cáo"
+      ],
+      "trang_thai": "Chưa làm",
+      "mo_ta_day_du": "Viết data.py + file cấu hình chung (danh sách 21 nhãn, label2id cố định, đường dẫn 2 bản dữ liệu)"
+    },
+    {
+      "id": "T08",
+      "tieu_de": "T08 · Viết metrics.py · hạn 12/10",
+      "nguoi": [
+        "Phúc"
+      ],
+      "bat_dau": "01/10",
+      "han": "12/10",
+      "ngay_cong": 0.5,
+      "dau_vao": "Hợp đồng chung (01)",
+      "dau_ra": "src/metrics.py (ĐÃ XONG — hàm tinh_metrics, luu_json; tự kiểm tra 3 câu ĐÚNG)",
+      "xong_khi": [
+        "Thử 3 câu tự tạo (1 đúng, 1 sai biên, 1 sai loại) ra đúng số đã tính tay",
+        "đã đẩy lên repo"
+      ],
+      "gan_voi": "2.3",
+      "nhan": [
+        "vai trò 1: baseline + zero-shot",
+        "viết báo cáo"
+      ],
+      "trang_thai": "Xong",
+      "mo_ta_day_du": "Viết metrics.py: chấm F1 mức thực thể bằng seqeval (mode=strict, IOB2), micro/macro + F1 từng loại, lưu JSON"
+    },
+    {
+      "id": "T09",
+      "tieu_de": "T09 · Tóm tắt bài báo nền tảng + mục tiêu đề tài bằng lời của nhóm · hạn 14/10",
+      "nguoi": [
+        "Yến Trinh"
+      ],
+      "bat_dau": "12/10",
+      "han": "14/10",
+      "ngay_cong": 1,
+      "dau_vao": "Bài báo NAACL 2021 (arXiv 2104.03879); phần giới thiệu bài báo trong notebook của Phúc chỉ để tham khảo — phải viết lại bằng lời của nhóm",
+      "dau_ra": "Khoảng 1 trang viết thẳng vào mục 1.1, 1.2, 2.4 của file báo cáo",
+      "xong_khi": [
+        "Đủ 5 ý: bài toán – dữ liệu – phương pháp – kết quả chính – đóng góp, + mục tiêu của nhóm",
+        "không câu nào chép nguyên văn",
+        "1 bạn khác đọc duyệt"
+      ],
+      "gan_voi": "1.1, 1.2, 2.4 · BC1 mục (1)",
+      "nhan": [
+        "vai trò 4: mBERT + demo",
+        "viết báo cáo"
+      ],
+      "trang_thai": "Chưa làm",
+      "mo_ta_day_du": "Tóm tắt bài báo nền tảng + mục tiêu đề tài bằng lời của nhóm"
+    },
+    {
+      "id": "T10",
+      "tieu_de": "T10 · Viết train_ner.py dùng chung cho cả 3 kiến trúc · hạn 15/10",
+      "nguoi": [
+        "Hoàng Duyên"
+      ],
+      "bat_dau": "13/10",
+      "han": "15/10",
+      "ngay_cong": 2,
+      "dau_vao": "data.py (07), src/metrics.py của Phúc (đã có). Trong lúc chờ data.py: viết khung theo hướng dẫn token classification của Hugging Face",
+      "dau_ra": "src/train_ner.py + cách chạy bằng 1 dòng lệnh trong README (PR, Phúc review)",
+      "xong_khi": [
+        "(a) PhoBERT chạy 1 epoch trên 500 câu không lỗi, số id = số nhãn ở mọi câu, F1 dev > 0",
+        "(b) XLM-R và mBERT chạy ≥ 50 bước không lỗi",
+        "(c) 2 seed khác nhau cho loss khác nhau",
+        "(d) tự lưu JSON đúng mẫu + checkpoint tốt nhất"
+      ],
+      "gan_voi": "4.3.1 · BC1 mục (4)",
+      "nhan": [
+        "vai trò 2: PhoBERT",
+        "viết báo cáo"
+      ],
+      "trang_thai": "Chưa làm",
+      "mo_ta_day_du": "Viết train_ner.py dùng chung cho cả 3 kiến trúc (căn nhãn subword, huấn luyện, chọn checkpoint theo dev, lưu JSON)"
+    },
+    {
+      "id": "T11",
+      "tieu_de": "T11 · EDA: thống kê dữ liệu + độ dài câu · hạn 15/10",
+      "nguoi": [
+        "Đức Tâm"
+      ],
+      "bat_dau": "14/10",
+      "han": "15/10",
+      "ngay_cong": 1.5,
+      "dau_vao": "data.py (07); notebook của Phúc đã có bảng số thực thể theo loại — tái dùng, bổ sung độ dài câu và số subword",
+      "dau_ra": "notebooks/eda.ipynb; bảng số câu & số thực thể theo 10 loại × 3 tập; biểu đồ phân bố; 3 câu ví dụ có nhãn; % câu vượt 256 subword theo từng tokenizer",
+      "xong_khi": [
+        "Tổng số thực thể khớp bài báo (≈ 35K) hoặc có giải thích chênh lệch",
+        "đã viết mục 3.1–3.2 trong báo cáo"
+      ],
+      "gan_voi": "3.1, 3.2 · BC1 mục (2)",
+      "nhan": [
+        "vai trò 3: XLM-R",
+        "code"
+      ],
+      "trang_thai": "Chưa làm",
+      "mo_ta_day_du": "EDA: thống kê dữ liệu + độ dài câu"
+    },
+    {
+      "id": "T12",
+      "tieu_de": "T12 · Baseline: CRF với đặc trưng từ · hạn 12/10",
+      "nguoi": [
+        "Phúc"
+      ],
+      "bat_dau": "01/10",
+      "han": "12/10",
+      "ngay_cong": 1.5,
+      "dau_vao": "data.py (07), metrics.py (08)",
+      "dau_ra": "results/crf.json — ĐÃ XONG: strict micro-F1 0,9199 · macro-F1 0,8771 (c1 = c2 = 0,05, bản mức từ)",
+      "xong_khi": [
+        "Chọn c1/c2 trên dev (thử ≥ 4 cặp), có micro/macro/F1 từng loại trên test",
+        "ghi rõ dùng bản âm tiết hay mức từ"
+      ],
+      "gan_voi": "4.1, 5.1 · BC1 mục (3)",
+      "nhan": [
+        "vai trò 1: baseline + zero-shot",
+        "code"
+      ],
+      "trang_thai": "Xong",
+      "mo_ta_day_du": "Baseline (A): CRF với đặc trưng từ (sklearn-crfsuite)"
+    },
+    {
+      "id": "T13",
+      "tieu_de": "T13 · Viết Chương 2 – cơ sở lý thuyết · hạn 16/10",
+      "nguoi": [
+        "Yến Trinh"
+      ],
+      "bat_dau": "15/10",
+      "han": "16/10",
+      "ngay_cong": 1,
+      "dau_vao": "Bài báo + tài liệu tham khảo",
+      "dau_ra": "Mục 2.1, 2.2.2, 2.2.3 trong báo cáo",
+      "xong_khi": [
+        "Mỗi mục ½–1 trang, có trích dẫn IEEE, có 1 ví dụ gán nhãn BIO"
+      ],
+      "gan_voi": "2.1, 2.2.2, 2.2.3",
+      "nhan": [
+        "vai trò 4: mBERT + demo",
+        "viết báo cáo"
+      ],
+      "trang_thai": "Chưa làm",
+      "mo_ta_day_du": "Viết Chương 2 – cơ sở lý thuyết: NER & nhãn BIO, Transformer/BERT, fine-tune vs zero-shot"
+    },
+    {
+      "id": "T14",
+      "tieu_de": "T14 · Zero-shot: áp model NER tiếng Việt có sẵn, KHÔNG train lại · hạn 12/10",
+      "nguoi": [
+        "Phúc"
+      ],
+      "bat_dau": "01/10",
+      "han": "12/10",
+      "ngay_cong": 1.5,
+      "dau_vao": "data.py, metrics.py. Gợi ý model: NlpHUST/ner-vietnamese-electra-base (nhãn PER/ORG/LOC/MISC, train trên VLSP 2018) + 1 model dự phòng",
+      "dau_ra": "results/zeroshot.json — ĐÃ XONG: NlpHUST/ner-vietnamese-electra-base, strict micro-F1 0,4760 · macro-F1 0,1996",
+      "xong_khi": [
+        "Có số F1 thật trên test",
+        "kiểm tra bằng mắt 5 câu căn vị trí đúng",
+        "ghi rõ quy ước F1 = 0 cho loại model không có"
+      ],
+      "gan_voi": "4.2, 5.1 · BC1 mục (3)",
+      "nhan": [
+        "vai trò 1: baseline + zero-shot",
+        "code"
+      ],
+      "trang_thai": "Xong",
+      "mo_ta_day_du": "Zero-shot (B): áp model NER tiếng Việt có sẵn, KHÔNG train lại"
+    },
+    {
+      "id": "T15",
+      "tieu_de": "T15 · Fine-tune PhoBERT-base × 3 seed · hạn 18/10",
+      "nguoi": [
+        "Hoàng Duyên"
+      ],
+      "bat_dau": "16/10",
+      "han": "18/10",
+      "ngay_cong": 1,
+      "dau_vao": "train_ner.py (10); seed 42 / 123 / 2024",
+      "dau_ra": "results/phobert_word_seed{42,123,2024}.json + checkpoint trên Drive",
+      "xong_khi": [
+        "Đủ 3 JSON, 3 kết quả khác nhau",
+        "micro-F1 test không thấp bất thường (bài báo: PhoBERT-base ≈ 0,94 — nếu < 0,85 phải kiểm tra căn nhãn trước khi chạy tiếp)"
+      ],
+      "gan_voi": "4.3.2, 5.2 · BC1 mục (4)",
+      "nhan": [
+        "vai trò 2: PhoBERT",
+        "code"
+      ],
+      "trang_thai": "Chưa làm",
+      "mo_ta_day_du": "Fine-tune PhoBERT-base (bản mức từ) × 3 seed"
+    },
+    {
+      "id": "T16",
+      "tieu_de": "T16 · Fine-tune XLM-RoBERTa-base × 3 seed · hạn 18/10",
+      "nguoi": [
+        "Đức Tâm"
+      ],
+      "bat_dau": "16/10",
+      "han": "18/10",
+      "ngay_cong": 1,
+      "dau_vao": "train_ner.py (10); cùng seed và siêu tham số",
+      "dau_ra": "results/xlmr_syllable_seed{42,123,2024}.json + checkpoint trên Drive",
+      "xong_khi": [
+        "Đủ 3 JSON, 3 kết quả khác nhau",
+        "F1 không thấp bất thường (tham chiếu: XLM-R large ≈ 0,94, bản base thấp hơn một chút)"
+      ],
+      "gan_voi": "4.3.3, 5.2 · BC1 mục (4)",
+      "nhan": [
+        "vai trò 3: XLM-R",
+        "code"
+      ],
+      "trang_thai": "Chưa làm",
+      "mo_ta_day_du": "Fine-tune XLM-RoBERTa-base (bản âm tiết) × 3 seed"
+    },
+    {
+      "id": "T17",
+      "tieu_de": "T17 · Fine-tune mBERT-cased × 3 seed · hạn 18/10",
+      "nguoi": [
+        "Yến Trinh"
+      ],
+      "bat_dau": "16/10",
+      "han": "18/10",
+      "ngay_cong": 1,
+      "dau_vao": "train_ner.py (10); cùng seed và siêu tham số",
+      "dau_ra": "results/mbert_syllable_seed{42,123,2024}.json + checkpoint trên Drive",
+      "xong_khi": [
+        "Đủ 3 JSON, 3 kết quả khác nhau",
+        "F1 không thấp bất thường (dưới ≈ 0,85 → kiểm tra căn nhãn)"
+      ],
+      "gan_voi": "4.3.4, 5.2 · BC1 mục (4)",
+      "nhan": [
+        "vai trò 4: mBERT + demo",
+        "code"
+      ],
+      "trang_thai": "Chưa làm",
+      "mo_ta_day_du": "Fine-tune mBERT-cased (bản âm tiết) × 3 seed"
+    },
+    {
+      "id": "T18",
+      "tieu_de": "T18 · Viết phần baseline + zero-shot vào báo cáo · hạn 15/10",
+      "nguoi": [
+        "Phúc"
+      ],
+      "bat_dau": "13/10",
+      "han": "15/10",
+      "ngay_cong": 1,
+      "dau_vao": "Notebook 01 của Phúc (đã có kết quả, bảng, phân tích lỗi CRF và zero-shot)",
+      "dau_ra": "Mục 2.2.1, 3.4, 4.1, 4.2, 5.1 (bảng A vs B)",
+      "xong_khi": [
+        "Mọi con số khớp file JSON",
+        "có ≥ 2 câu ví dụ thật mà zero-shot nhận sai/bỏ sót"
+      ],
+      "gan_voi": "BC1 mục (3)",
+      "nhan": [
+        "vai trò 1: baseline + zero-shot",
+        "viết báo cáo"
+      ],
+      "trang_thai": "Chưa làm",
+      "mo_ta_day_du": "Viết phần baseline + zero-shot vào báo cáo (kèm đoạn giải thích vì sao zero-shot yếu)"
+    },
+    {
+      "id": "T19",
+      "tieu_de": "T19 · Viết phần PhoBERT + quy trình huấn luyện chung vào báo cáo · hạn 19/10",
+      "nguoi": [
+        "Hoàng Duyên"
+      ],
+      "bat_dau": "18/10",
+      "han": "19/10",
+      "ngay_cong": 0.5,
+      "dau_vao": "Kết quả 10, 15",
+      "dau_ra": "Mục 3.3.2, 3.3.3, 4.3.1, 4.3.2, 4.4 + đoạn môi trường của mình ở 4.5",
+      "xong_khi": [
+        "Ghi đủ: siêu tham số, thời gian/epoch, số seed đã chạy, lỗi đã gặp + cách sửa"
+      ],
+      "gan_voi": "BC1 mục (4)",
+      "nhan": [
+        "vai trò 2: PhoBERT",
+        "viết báo cáo"
+      ],
+      "trang_thai": "Chưa làm",
+      "mo_ta_day_du": "Viết phần PhoBERT + quy trình huấn luyện chung vào báo cáo"
+    },
+    {
+      "id": "T20",
+      "tieu_de": "T20 · aggregate.py bản đầu: bảng mean ± std sơ bộ · hạn 19/10",
+      "nguoi": [
+        "Hoàng Duyên"
+      ],
+      "bat_dau": "18/10",
+      "han": "19/10",
+      "ngay_cong": 0.5,
+      "dau_vao": "9 file JSON (15, 16, 17)",
+      "dau_ra": "src/aggregate.py + bảng sơ bộ ở mục 5.2",
+      "xong_khi": [
+        "Bảng 3 dòng × micro/macro-F1 dạng mean ± std",
+        "ghi rõ std mẫu (chia n−1)"
+      ],
+      "gan_voi": "5.2 · điểm cộng BC1",
+      "nhan": [
+        "vai trò 2: PhoBERT",
+        "code"
+      ],
+      "trang_thai": "Chưa làm",
+      "mo_ta_day_du": "aggregate.py bản đầu → bảng mean ± std sơ bộ của 3 kiến trúc (làm hơn yêu cầu BC1)"
+    },
+    {
+      "id": "T21",
+      "tieu_de": "T21 · Viết phần XLM-R + tiền xử lý vào báo cáo · hạn 19/10",
+      "nguoi": [
+        "Đức Tâm"
+      ],
+      "bat_dau": "18/10",
+      "han": "19/10",
+      "ngay_cong": 0.5,
+      "dau_vao": "Kết quả 07, 16",
+      "dau_ra": "Mục 3.3.1, 4.3.3 + đoạn môi trường của mình ở 4.5",
+      "xong_khi": [
+        "Ghi đủ: siêu tham số, thời gian/epoch, số seed đã chạy, lỗi đã gặp + cách sửa"
+      ],
+      "gan_voi": "BC1 mục (4)",
+      "nhan": [
+        "vai trò 3: XLM-R",
+        "viết báo cáo"
+      ],
+      "trang_thai": "Chưa làm",
+      "mo_ta_day_du": "Viết phần XLM-R + tiền xử lý (bản âm tiết vs mức từ) vào báo cáo"
+    },
+    {
+      "id": "T22",
+      "tieu_de": "T22 · Viết phần mBERT vào báo cáo · hạn 19/10",
+      "nguoi": [
+        "Yến Trinh"
+      ],
+      "bat_dau": "18/10",
+      "han": "19/10",
+      "ngay_cong": 0.5,
+      "dau_vao": "Kết quả 17",
+      "dau_ra": "Mục 4.3.4 + đoạn môi trường của mình ở 4.5",
+      "xong_khi": [
+        "Ghi đủ: siêu tham số, thời gian/epoch, số seed đã chạy, lỗi đã gặp + cách sửa"
+      ],
+      "gan_voi": "BC1 mục (4)",
+      "nhan": [
+        "vai trò 4: mBERT + demo",
+        "viết báo cáo"
+      ],
+      "trang_thai": "Chưa làm",
+      "mo_ta_day_du": "Viết phần mBERT vào báo cáo"
+    },
+    {
+      "id": "T23",
+      "tieu_de": "T23 · Ráp file Báo cáo tiến độ lần 1 · hạn 21/10",
+      "nguoi": [
+        "Yến Trinh"
+      ],
+      "bat_dau": "19/10",
+      "han": "21/10",
+      "ngay_cong": 1,
+      "dau_vao": "Các mục đã viết (hạn 18/10) + sheet Tổng quan (% hoàn thành)",
+      "dau_ra": "BC_TienDo1_De26.docx",
+      "xong_khi": [
+        "Đủ 5 mục",
+        "mục (3) có số thật",
+        "mục (4) có 3 người × (môi trường, số seed đã chạy, lỗi gặp)",
+        "mục (5) có bảng 4 vai trò + % hoàn thành từng người"
+      ],
+      "gan_voi": "BC1 mục (1)–(5)",
+      "nhan": [
+        "vai trò 4: mBERT + demo",
+        "viết báo cáo"
+      ],
+      "trang_thai": "Chưa làm",
+      "mo_ta_day_du": "Ráp file Báo cáo tiến độ lần 1 (ngắn, đúng 5 mục theo thứ tự của cô)"
+    },
+    {
+      "id": "T24",
+      "tieu_de": "T24 · Kiểm tra chéo số liệu BC1 với file kết quả · hạn 20/10",
+      "nguoi": [
+        "Đức Tâm"
+      ],
+      "bat_dau": "20/10",
+      "han": "20/10",
+      "ngay_cong": 0.5,
+      "dau_vao": "Bản ráp BC1 (23)",
+      "dau_ra": "Danh sách chỗ sai (nếu có) gửi Trinh",
+      "xong_khi": [
+        "Mọi con số trong BC1 truy được về 1 file kết quả"
+      ],
+      "gan_voi": "BC1 mục (2)(3)(4)",
+      "nhan": [
+        "vai trò 3: XLM-R",
+        "viết báo cáo"
+      ],
+      "trang_thai": "Chưa làm",
+      "mo_ta_day_du": "Kiểm tra chéo số liệu BC1: đối chiếu từng con số với file JSON / notebook"
+    },
+    {
+      "id": "T25",
+      "tieu_de": "T25 · Họp rà soát BC1 · hạn 20/10",
+      "nguoi": [
+        "Phúc",
+        "Hoàng Duyên",
+        "Đức Tâm",
+        "Yến Trinh"
+      ],
+      "bat_dau": "20/10",
+      "han": "20/10",
+      "ngay_cong": 0,
+      "dau_vao": "Bản ráp BC1 + kết quả kiểm tra chéo (24)",
+      "dau_ra": "Danh sách sửa cuối",
+      "xong_khi": [
+        "Cả nhóm đồng ý bản nộp"
+      ],
+      "gan_voi": "BC1",
+      "nhan": [
+        "cả nhóm",
+        "họp / nộp"
+      ],
+      "trang_thai": "Chưa làm",
+      "mo_ta_day_du": "Họp rà soát BC1 (45 phút, tối 20/10)"
+    },
+    {
+      "id": "T26",
+      "tieu_de": "T26 · NỘP Báo cáo tiến độ lần 1 · hạn 22/10",
+      "nguoi": [
+        "Yến Trinh"
+      ],
+      "bat_dau": "21/10",
+      "han": "22/10",
+      "ngay_cong": 0,
+      "dau_vao": "Bản đã sửa sau họp (25)",
+      "dau_ra": "File đã nộp qua kênh cô chỉ định",
+      "xong_khi": [
+        "Có xác nhận đã nộp (ảnh chụp) gửi nhóm"
+      ],
+      "gan_voi": "BC1",
+      "nhan": [
+        "vai trò 4: mBERT + demo",
+        "họp / nộp"
+      ],
+      "trang_thai": "Chưa làm",
+      "mo_ta_day_du": "NỘP Báo cáo tiến độ lần 1"
+    }
+  ]
+}

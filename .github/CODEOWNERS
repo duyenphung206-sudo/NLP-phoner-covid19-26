@@ -1,0 +1,10 @@
+# Ai là chủ của file nào — GitHub tự gợi ý người đó review khi có PR sửa file.
+# CÁCH BẬT: thay @ten-github-... bằng username thật rồi bỏ dấu # ở đầu dòng.
+# (Để nguyên dấu # thì file này không có tác dụng, không gây lỗi.)
+
+# /src/metrics.py          @ten-github-phuc
+# /src/data.py             @ten-github-tam
+# /src/train_ner.py        @duyenphung206-sudo
+# /src/aggregate.py        @duyenphung206-sudo
+# /configs/                @duyenphung206-sudo @ten-github-tam
+# /app/                    @ten-github-trinh

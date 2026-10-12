@@ -1,0 +1,13 @@
+# Thư viện dùng chung của nhóm. Colab đã có sẵn torch, numpy, pandas, matplotlib.
+# Cài: pip install -r requirements.txt
+# Sau khi chạy được, mỗi người ghi phiên bản thật vào file JSON kết quả (trường "thu_vien").
+transformers>=4.40
+datasets
+accelerate
+seqeval
+sklearn-crfsuite
+underthesea
+py_vncorenlp
+pandas
+matplotlib
+gradio
