@@ -1,0 +1,32 @@
+{
+  "ten_mo_hinh": "Zero-shot (NER tổng quát)",
+  "che_do_cham": "strict_IOB2",
+  "so_thuc_the": 11735,
+  "precision_micro": 0.6969,
+  "recall_micro": 0.3615,
+  "f1_micro": 0.476,
+  "f1_macro": 0.1996,
+  "f1_tung_loai": {
+    "PATIENT_ID": 0.0,
+    "NAME": 0.6809,
+    "AGE": 0.0,
+    "GENDER": 0.0,
+    "JOB": 0.0,
+    "LOCATION": 0.809,
+    "ORGANIZATION": 0.5057,
+    "SYMPTOM_AND_DISEASE": 0.0,
+    "TRANSPORTATION": 0.0,
+    "DATE": 0.0
+  },
+  "tham_so": {
+    "model": "NlpHUST/ner-vietnamese-electra-base",
+    "muc_du_lieu": "am_tiet"
+  },
+  "bang_anh_xa_nhan": {
+    "PERSON": "NAME",
+    "LOCATION": "LOCATION",
+    "ORGANIZATION": "ORGANIZATION",
+    "MISCELLANEOUS": "bo"
+  },
+  "quy_uoc": "Loại model không có thì F1 = 0"
+}

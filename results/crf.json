@@ -1,0 +1,49 @@
+{
+  "ten_mo_hinh": "CRF (tách từ)",
+  "che_do_cham": "strict_IOB2",
+  "so_thuc_the": 11735,
+  "precision_micro": 0.9375,
+  "recall_micro": 0.903,
+  "f1_micro": 0.9199,
+  "f1_macro": 0.8771,
+  "f1_tung_loai": {
+    "PATIENT_ID": 0.9705,
+    "NAME": 0.8826,
+    "AGE": 0.9396,
+    "GENDER": 0.9381,
+    "JOB": 0.5357,
+    "LOCATION": 0.9217,
+    "ORGANIZATION": 0.8455,
+    "SYMPTOM_AND_DISEASE": 0.8074,
+    "TRANSPORTATION": 0.9496,
+    "DATE": 0.9808
+  },
+  "tham_so": {
+    "c1": 0.05,
+    "c2": 0.05,
+    "max_iterations": 100,
+    "muc_du_lieu": "tach_tu"
+  },
+  "ket_qua_dev": [
+    {
+      "c1": 0.1,
+      "c2": 0.1,
+      "f1_dev": 0.9238
+    },
+    {
+      "c1": 0.05,
+      "c2": 0.05,
+      "f1_dev": 0.9246
+    },
+    {
+      "c1": 0.3,
+      "c2": 0.05,
+      "f1_dev": 0.9227
+    },
+    {
+      "c1": 0.01,
+      "c2": 0.01,
+      "f1_dev": 0.9231
+    }
+  ]
+}
