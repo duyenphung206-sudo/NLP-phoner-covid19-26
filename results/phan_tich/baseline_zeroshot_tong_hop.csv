@@ -1,0 +1,4 @@
+﻿Mô hình,Precision (micro),Recall (micro),F1 (micro),F1 (macro)
+CRF (tách từ),0.9372,0.9034,0.92,0.8772
+Zero-shot (NER tổng quát),0.6969,0.3615,0.476,0.1996
+Trần lý thuyết (đúng 100% NAME/LOC/ORG),1.0,0.4712,0.6406,0.3

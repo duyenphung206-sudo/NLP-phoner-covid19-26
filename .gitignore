@@ -37,3 +37,10 @@ Thumbs.db
 desktop.ini
 .vscode/
 .idea/
+
+# ===== Bổ sung: mô hình dạng pickle / .model (CRF, sentencepiece...) =====
+*.pickle
+*.model
+
+data/
+PhoNER_COVID19/
