@@ -1,0 +1,92 @@
+{
+  "khoa_mo_hinh": "phobert",
+  "kieu": "random",
+  "so_cau_hinh": 6,
+  "so_epoch_moi_cau_hinh": 3,
+  "seed": 42,
+  "khong_gian": {
+    "learning_rate": [
+      2e-05,
+      3e-05,
+      5e-05
+    ],
+    "batch_size": [
+      16,
+      32
+    ],
+    "warmup_ratio": [
+      0.0,
+      0.1
+    ],
+    "weight_decay": [
+      0.0,
+      0.01
+    ]
+  },
+  "bang": [
+    {
+      "weight_decay": 0.01,
+      "warmup_ratio": 0.0,
+      "learning_rate": 5e-05,
+      "batch_size": 16,
+      "f1_micro_dev": 0.9546,
+      "f1_macro_dev": 0.9347,
+      "thoi_gian_giay": 102
+    },
+    {
+      "weight_decay": 0.0,
+      "warmup_ratio": 0.0,
+      "learning_rate": 5e-05,
+      "batch_size": 16,
+      "f1_micro_dev": 0.9543,
+      "f1_macro_dev": 0.9315,
+      "thoi_gian_giay": 160
+    },
+    {
+      "weight_decay": 0.01,
+      "warmup_ratio": 0.1,
+      "learning_rate": 5e-05,
+      "batch_size": 16,
+      "f1_micro_dev": 0.9536,
+      "f1_macro_dev": 0.9297,
+      "thoi_gian_giay": 90
+    },
+    {
+      "weight_decay": 0.0,
+      "warmup_ratio": 0.0,
+      "learning_rate": 2e-05,
+      "batch_size": 16,
+      "f1_micro_dev": 0.9414,
+      "f1_macro_dev": 0.8793,
+      "thoi_gian_giay": 127
+    },
+    {
+      "weight_decay": 0.0,
+      "warmup_ratio": 0.1,
+      "learning_rate": 3e-05,
+      "batch_size": 32,
+      "f1_micro_dev": 0.9391,
+      "f1_macro_dev": 0.8738,
+      "thoi_gian_giay": 89
+    },
+    {
+      "weight_decay": 0.0,
+      "warmup_ratio": 0.0,
+      "learning_rate": 3e-05,
+      "batch_size": 32,
+      "f1_micro_dev": 0.9299,
+      "f1_macro_dev": 0.8414,
+      "thoi_gian_giay": 106
+    }
+  ],
+  "tot_nhat": {
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.0,
+    "learning_rate": 5e-05,
+    "batch_size": 16,
+    "f1_micro_dev": 0.9546,
+    "f1_macro_dev": 0.9347,
+    "thoi_gian_giay": 102
+  },
+  "thu_nhanh": false
+}

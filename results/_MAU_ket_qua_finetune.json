@@ -1,5 +1,5 @@
 {
-  "_ghi_chu": "FILE MẪU — không phải kết quả thật. Tên file thật: results/{khoa_mo_hinh}_seed{seed}.json. 8 trường đầu do metrics.tinh_metrics() tạo; các trường sau do train_ner.py ghép thêm.",
+  "_ghi_chu": "FILE MẪU — không phải kết quả thật. Tên file thật: results/{khoa_mo_hinh}_seed{seed}.json. 8 trường đầu do metrics.tinh_metrics() tạo; các trường sau do train_ner.py ghép thêm (cập nhật 17/10: thêm f1_macro_dev, lich_su_dev, so_cau_bi_cat, gpu; 'lr' đổi tên thành 'learning_rate').",
   "ten_mo_hinh": "xlmr seed 42",
   "che_do_cham": "strict_IOB2",
   "so_thuc_the": 11735,
@@ -24,22 +24,40 @@
   "muc_du_lieu": "muc_am_tiet",
   "seed": 42,
   "best_epoch": null,
+  "so_epoch_da_chay": null,
   "f1_micro_dev": null,
+  "f1_macro_dev": null,
+  "lich_su_dev": [
+    {
+      "epoch": 1.0,
+      "f1_micro": null,
+      "loss": null
+    }
+  ],
   "sieu_tham_so": {
-    "lr": 5e-05,
+    "learning_rate": 5e-05,
     "batch_size": 16,
     "gradient_accumulation_steps": 2,
-    "so_epoch_toi_da": 15,
-    "dung_som_sau": 3,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.1,
     "max_length": 256,
-    "fp16": true
+    "fp16": true,
+    "so_epoch_toi_da": 15,
+    "dung_som_sau": 3
   },
+  "so_cau_bi_cat": {
+    "train": null,
+    "dev": null
+  },
+  "so_cau_test_bi_cat": null,
   "thoi_gian_train_giay": null,
+  "gpu": "Tesla T4",
   "thu_vien": {
     "transformers": "x.y.z",
     "torch": "x.y.z",
     "seqeval": "x.y.z"
   },
   "moi_truong": "Colab T4 / Kaggle P100 / ...",
-  "nguoi_chay": "Đức Tâm"
+  "nguoi_chay": "Đức Tâm",
+  "thu_nhanh": false
 }

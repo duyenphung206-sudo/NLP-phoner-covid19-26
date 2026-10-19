@@ -1,13 +1,19 @@
-# Thư viện dùng chung của nhóm. Colab đã có sẵn torch, numpy, pandas, matplotlib.
+# Thư viện dùng chung của nhóm (máy cá nhân / VS Code). Colab đã có sẵn torch, numpy, pandas, matplotlib, scikit-learn.
 # Cài: pip install -r requirements.txt
-# Sau khi chạy được, mỗi người ghi phiên bản thật vào file JSON kết quả (trường "thu_vien").
+# seqeval: nếu pip báo lỗi "metadata-generation-failed" thì bỏ qua — src/nap_seqeval.py tự nạp từ mã nguồn.
+torch
 transformers>=4.40
-datasets
 accelerate
-seqeval
-sklearn-crfsuite
-underthesea
-py_vncorenlp
+scikit-learn
+scipy
+numpy
 pandas
 matplotlib
-gradio
+sentencepiece
+protobuf
+sklearn-crfsuite
+seqeval
+# demo
+streamlit>=1.50
+underthesea>=6.8
+py_vncorenlp

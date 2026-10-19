@@ -38,9 +38,8 @@ desktop.ini
 .vscode/
 .idea/
 
-# ===== Bổ sung: mô hình dạng pickle / .model (CRF, sentencepiece...) =====
-*.pickle
-*.model
-
-data/
-PhoNER_COVID19/
+# ===== Demo Streamlit: mô hình và VnCoreNLP tải về máy, không commit =====
+app/mo_hinh/*
+!app/mo_hinh/README.md
+app/vncorenlp/
+ket_qua_*.zip
