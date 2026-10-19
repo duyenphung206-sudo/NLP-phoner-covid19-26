@@ -1,0 +1,456 @@
+{
+  "_ghi_chu": "Kế hoạch cho Báo cáo tiến độ 2. Chạy workflow 'Tạo Issue từ kế hoạch' với ô file kế hoạch = plan/tasks_bc2.json (sau khi nộp BC1).",
+  "milestone": {
+    "title": "BC2 — Báo cáo tiến độ 2 (12/11/2026)",
+    "due_on": "2026-11-12T16:59:00Z",
+    "description": "4 mục cô yêu cầu: (1) kết quả đầy đủ 3 kiến trúc × 3 seed, mean ± std so với baseline/zero-shot; (2) phân tích lỗi ≥ 3 nhóm có ví dụ; (3) trạng thái demo Streamlit (link hoặc video/ảnh); (4) kế hoạch/kết quả bước đầu yêu cầu nâng cao."
+  },
+  "labels": [
+    {
+      "name": "vai trò 1: baseline + zero-shot",
+      "color": "1D76DB",
+      "description": "Phúc — CRF, zero-shot, nâng cao"
+    },
+    {
+      "name": "vai trò 2: PhoBERT",
+      "color": "0E8A16",
+      "description": "Hoàng Duyên — PhoBERT, train_ner.py"
+    },
+    {
+      "name": "vai trò 3: XLM-R",
+      "color": "FBCA04",
+      "description": "Đức Tâm — XLM-R, dữ liệu, phân tích lỗi"
+    },
+    {
+      "name": "vai trò 4: mBERT + demo",
+      "color": "D93F0B",
+      "description": "Yến Trinh — mBERT, demo, tóm tắt bài báo"
+    },
+    {
+      "name": "cả nhóm",
+      "color": "5319E7",
+      "description": "Việc chung của cả 4 người"
+    },
+    {
+      "name": "code",
+      "color": "C5DEF5",
+      "description": "Viết hoặc chạy code"
+    },
+    {
+      "name": "viết báo cáo",
+      "color": "BFD4F2",
+      "description": "Viết/ráp báo cáo"
+    },
+    {
+      "name": "họp / nộp",
+      "color": "F9D0C4",
+      "description": "Họp nhóm, nộp bài"
+    },
+    {
+      "name": "github",
+      "color": "EDEDED",
+      "description": "Thiết lập repo, quy trình"
+    },
+    {
+      "name": "vướng mắc",
+      "color": "B60205",
+      "description": "Đang bị chặn, cần giúp"
+    },
+    {
+      "name": "nhiệm vụ",
+      "color": "0052CC",
+      "description": "Nhiệm vụ tạo từ mẫu Issue"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T27",
+      "tieu_de": "T27 · Bảng kết quả chính thức 3 × 3 so với A, B · hạn 28/10",
+      "nguoi": [
+        "Hoàng Duyên"
+      ],
+      "bat_dau": "23/10",
+      "han": "28/10",
+      "ngay_cong": 1.5,
+      "dau_vao": "9 JSON + checkpoint 3 kiến trúc; crf.json, zeroshot.json",
+      "dau_ra": "results/tong_hop/* chính thức (CRF, zero-shot, 3 kiến trúc mean ± std; micro, macro, F1 từng loại) + results/du_doan/predictions_test.csv (src/xuat_du_doan.py: câu | thật | CRF | zero-shot | PhoBERT | XLM-R | mBERT, seed 42)",
+      "xong_khi": [
+        "CSV đủ 3.000 câu test",
+        "số trong bảng khớp JSON"
+      ],
+      "gan_voi": "5.3 · BC2 mục (1)",
+      "nhan": [
+        "vai trò 2: PhoBERT",
+        "code"
+      ],
+      "trang_thai": "Chưa làm",
+      "mo_ta_day_du": "Hoàn thiện bảng kết quả chính thức (aggregate.py đã có; dự đoán test đã do train_ner.py ghi vào results/du_doan/)"
+    },
+    {
+      "id": "T28",
+      "tieu_de": "T28 · Chia sẻ mô hình tốt nhất cho demo · hạn 26/10",
+      "nguoi": [
+        "Hoàng Duyên"
+      ],
+      "bat_dau": "23/10",
+      "han": "26/10",
+      "ngay_cong": 0.5,
+      "dau_vao": "Bảng mean ± std sơ bộ (20) để biết mô hình tốt nhất",
+      "dau_ra": "mo_hinh_<khoa>.zip của mô hình tốt nhất chia sẻ cho Trinh trên Drive (tùy chọn: repo private trên HF Hub)",
+      "xong_khi": [
+        "Trinh giải nén vào app/mo_hinh/<khoa>/ và app hiện được mô hình đó"
+      ],
+      "gan_voi": "4.7",
+      "nhan": [
+        "vai trò 2: PhoBERT",
+        "code"
+      ],
+      "trang_thai": "Chưa làm",
+      "mo_ta_day_du": "Chia sẻ mô hình tốt nhất cho demo (zip trên Drive; tùy chọn: Hugging Face Hub private — ô 12 notebook)"
+    },
+    {
+      "id": "T29",
+      "tieu_de": "T29 · Yêu cầu nâng cao: PhoBERT bản âm tiết × 3 seed · hạn 30/10",
+      "nguoi": [
+        "Phúc"
+      ],
+      "bat_dau": "23/10",
+      "han": "30/10",
+      "ngay_cong": 1,
+      "dau_vao": "train_ner.py; cùng seed + siêu tham số với (15)",
+      "dau_ra": "results/phobert_syllable_seed{42,123,2024}.json",
+      "xong_khi": [
+        "So với (15) chỉ khác đúng 1 thứ là đầu vào chưa tách từ",
+        "đủ 3 JSON"
+      ],
+      "gan_voi": "5.5 · BC2 mục (4)",
+      "nhan": [
+        "vai trò 1: baseline + zero-shot",
+        "code"
+      ],
+      "trang_thai": "Chưa làm",
+      "mo_ta_day_du": "Yêu cầu nâng cao: PhoBERT bản âm tiết (KHÔNG tách từ) × 3 seed"
+    },
+    {
+      "id": "T30",
+      "tieu_de": "T30 · Demo Streamlit với mô hình tốt nhất · hạn 31/10",
+      "nguoi": [
+        "Yến Trinh"
+      ],
+      "bat_dau": "23/10",
+      "han": "31/10",
+      "ngay_cong": 2,
+      "dau_vao": "Mô hình tốt nhất (28) giải nén vào app/mo_hinh/<tên>/",
+      "dau_ra": "app/ chạy được: nhập văn bản → thực thể tô màu, bảng, tải CSV/JSON",
+      "xong_khi": [
+        "Nhập 3 câu tự đặt → thực thể đúng loại",
+        "PhoBERT tự tách từ (VnCoreNLP hoặc underthesea)",
+        "AppTest không lỗi"
+      ],
+      "gan_voi": "4.7 · BC2 mục (3)",
+      "nhan": [
+        "vai trò 4: mBERT + demo",
+        "code"
+      ],
+      "trang_thai": "Chưa làm",
+      "mo_ta_day_du": "Demo Streamlit (D) theo yêu cầu của cô: app/app.py + app/ner_core.py chạy bằng VS Code với mô hình tốt nhất"
+    },
+    {
+      "id": "T31",
+      "tieu_de": "T31 · Phân tích lỗi 5 nhóm × các mô hình · hạn 03/11",
+      "nguoi": [
+        "Đức Tâm"
+      ],
+      "bat_dau": "29/10",
+      "han": "03/11",
+      "ngay_cong": 2,
+      "dau_vao": "results/du_doan/*.json (3 kiến trúc) + du_doan_test.json của Phúc",
+      "dau_ra": "Bảng số lỗi: đúng biên sai loại / đúng loại sai biên / bỏ sót / dự đoán thừa × (CRF, PhoBERT, XLM-R, mBERT) + bảng nhầm LOCATION↔ORGANIZATION",
+      "xong_khi": [
+        "Mỗi nhóm lỗi có ≥ 3 câu ví dụ thật",
+        "trả lời được “3 kiến trúc có mắc cùng loại lỗi không”"
+      ],
+      "gan_voi": "5.4 · BC2 mục (2)",
+      "nhan": [
+        "vai trò 3: XLM-R",
+        "code"
+      ],
+      "trang_thai": "Chưa làm",
+      "mo_ta_day_du": "Phân tích lỗi: chạy src/phan_tich_loi.py (5 nhóm lỗi × CRF, zero-shot, 3 kiến trúc; lỗi chung/riêng)"
+    },
+    {
+      "id": "T32",
+      "tieu_de": "T32 · Đọc lỗi PhoBERT · hạn 02/11",
+      "nguoi": [
+        "Hoàng Duyên"
+      ],
+      "bat_dau": "30/10",
+      "han": "02/11",
+      "ngay_cong": 0.5,
+      "dau_vao": "CSV (27) + bảng lỗi (31)",
+      "dau_ra": "1 đoạn nhận xét + 3 ví dụ gửi Tâm",
+      "xong_khi": [
+        "Ví dụ có câu, nhãn thật, nhãn dự đoán, nhóm lỗi"
+      ],
+      "gan_voi": "5.4",
+      "nhan": [
+        "vai trò 2: PhoBERT",
+        "code"
+      ],
+      "trang_thai": "Chưa làm",
+      "mo_ta_day_du": "Đọc lỗi PhoBERT"
+    },
+    {
+      "id": "T33",
+      "tieu_de": "T33 · Đọc lỗi XLM-R · hạn 02/11",
+      "nguoi": [
+        "Đức Tâm"
+      ],
+      "bat_dau": "30/10",
+      "han": "02/11",
+      "ngay_cong": 0.5,
+      "dau_vao": "CSV (27) + bảng lỗi (31)",
+      "dau_ra": "1 đoạn nhận xét + 3 ví dụ",
+      "xong_khi": [
+        "Ví dụ có câu, nhãn thật, nhãn dự đoán, nhóm lỗi"
+      ],
+      "gan_voi": "5.4",
+      "nhan": [
+        "vai trò 3: XLM-R",
+        "code"
+      ],
+      "trang_thai": "Chưa làm",
+      "mo_ta_day_du": "Đọc lỗi XLM-R"
+    },
+    {
+      "id": "T34",
+      "tieu_de": "T34 · Đọc lỗi mBERT · hạn 02/11",
+      "nguoi": [
+        "Yến Trinh"
+      ],
+      "bat_dau": "30/10",
+      "han": "02/11",
+      "ngay_cong": 0.5,
+      "dau_vao": "CSV (27) + bảng lỗi (31)",
+      "dau_ra": "1 đoạn nhận xét + 3 ví dụ gửi Tâm",
+      "xong_khi": [
+        "Ví dụ có câu, nhãn thật, nhãn dự đoán, nhóm lỗi"
+      ],
+      "gan_voi": "5.4",
+      "nhan": [
+        "vai trò 4: mBERT + demo",
+        "code"
+      ],
+      "trang_thai": "Chưa làm",
+      "mo_ta_day_du": "Đọc lỗi mBERT"
+    },
+    {
+      "id": "T35",
+      "tieu_de": "T35 · Đọc lỗi CRF và zero-shot, so với mô hình fine-tune · hạn 02/11",
+      "nguoi": [
+        "Phúc"
+      ],
+      "bat_dau": "30/10",
+      "han": "02/11",
+      "ngay_cong": 0.5,
+      "dau_vao": "CSV (27) + bảng lỗi (31)",
+      "dau_ra": "1 đoạn nhận xét + 3 ví dụ gửi Tâm",
+      "xong_khi": [
+        "Chỉ ra lỗi nào chỉ CRF/zero-shot mắc, lỗi nào cả fine-tune cũng mắc"
+      ],
+      "gan_voi": "5.2, 5.4",
+      "nhan": [
+        "vai trò 1: baseline + zero-shot",
+        "code"
+      ],
+      "trang_thai": "Chưa làm",
+      "mo_ta_day_du": "Đọc lỗi CRF và zero-shot, so với mô hình fine-tune"
+    },
+    {
+      "id": "T36",
+      "tieu_de": "T36 · So sánh có/không tách từ + giải thích kết quả · hạn 06/11",
+      "nguoi": [
+        "Phúc"
+      ],
+      "bat_dau": "31/10",
+      "han": "06/11",
+      "ngay_cong": 1.5,
+      "dau_vao": "Kết quả (29) và (15)",
+      "dau_ra": "Bảng mean ± std 2 điều kiện; F1 theo loại; F1 theo độ dài thực thể; mục 5.5",
+      "xong_khi": [
+        "Kết luận dựa trên số của nhóm (kể cả khi trái với bài báo)",
+        "chỉ rõ loại thực thể thay đổi nhiều nhất"
+      ],
+      "gan_voi": "5.5 · BC2 mục (4)",
+      "nhan": [
+        "vai trò 1: baseline + zero-shot",
+        "code"
+      ],
+      "trang_thai": "Chưa làm",
+      "mo_ta_day_du": "So sánh có/không tách từ + giải thích kết quả"
+    },
+    {
+      "id": "T37",
+      "tieu_de": "T37 · Triển khai demo / ảnh chụp + video · hạn 05/11",
+      "nguoi": [
+        "Yến Trinh"
+      ],
+      "bat_dau": "01/11",
+      "han": "05/11",
+      "ngay_cong": 1,
+      "dau_vao": "app/ chạy được (30)",
+      "dau_ra": "2 ảnh chụp + video 30–60 giây (+ link Streamlit Community Cloud nếu triển khai)",
+      "xong_khi": [
+        "Mở link từ máy khác chạy được, hoặc video rõ luồng nhập → kết quả"
+      ],
+      "gan_voi": "4.7 · BC2 mục (3)",
+      "nhan": [
+        "vai trò 4: mBERT + demo",
+        "code"
+      ],
+      "trang_thai": "Chưa làm",
+      "mo_ta_day_du": "Triển khai demo (Streamlit Community Cloud, mô hình từ HF Hub) hoặc quay video 30–60 giây + 2 ảnh chụp"
+    },
+    {
+      "id": "T38",
+      "tieu_de": "T38 · Viết mục 5.4 Phân tích lỗi hoàn chỉnh · hạn 08/11",
+      "nguoi": [
+        "Đức Tâm"
+      ],
+      "bat_dau": "03/11",
+      "han": "08/11",
+      "ngay_cong": 1.5,
+      "dau_vao": "31–35",
+      "dau_ra": "Mục 5.4 trong báo cáo (đã có phương pháp + số CRF/zero-shot)",
+      "xong_khi": [
+        "≥ 3 nhóm lỗi cụ thể có ví dụ",
+        "so sánh 3 kiến trúc",
+        "có phần thực thể đặc thù (PATIENT_ID, ORGANIZATION y tế, JOB)"
+      ],
+      "gan_voi": "5.4 · BC2 mục (2)",
+      "nhan": [
+        "vai trò 3: XLM-R",
+        "viết báo cáo"
+      ],
+      "trang_thai": "Chưa làm",
+      "mo_ta_day_du": "Viết mục 5.4 Phân tích lỗi hoàn chỉnh"
+    },
+    {
+      "id": "T39",
+      "tieu_de": "T39 · Biểu đồ + nháp thảo luận: kiến trúc nào tốt/kém nhất, std nói gì về độ ổn định · hạn 07/11",
+      "nguoi": [
+        "Hoàng Duyên"
+      ],
+      "bat_dau": "02/11",
+      "han": "07/11",
+      "ngay_cong": 1.5,
+      "dau_vao": "Bảng kết quả (27)",
+      "dau_ra": "2 biểu đồ (aggregate.py tự vẽ) + mục 5.6 nháp",
+      "xong_khi": [
+        "Giải thích có dẫn chứng (dữ liệu pretrain, tách từ, từ vựng)",
+        "nhận xét std của từng kiến trúc và của loại hiếm"
+      ],
+      "gan_voi": "5.3, 5.6",
+      "nhan": [
+        "vai trò 2: PhoBERT",
+        "code"
+      ],
+      "trang_thai": "Chưa làm",
+      "mo_ta_day_du": "Biểu đồ + nháp thảo luận: kiến trúc nào tốt/kém nhất, std nói gì về độ ổn định"
+    },
+    {
+      "id": "T40",
+      "tieu_de": "T40 · Viết mục 4.7 Demo Streamlit · hạn 07/11",
+      "nguoi": [
+        "Yến Trinh"
+      ],
+      "bat_dau": "05/11",
+      "han": "07/11",
+      "ngay_cong": 0.5,
+      "dau_vao": "37",
+      "dau_ra": "Mục 4.7",
+      "xong_khi": [
+        "Có ảnh chụp, link, mô tả luồng xử lý câu nhập"
+      ],
+      "gan_voi": "4.7",
+      "nhan": [
+        "vai trò 4: mBERT + demo",
+        "viết báo cáo"
+      ],
+      "trang_thai": "Chưa làm",
+      "mo_ta_day_du": "Viết mục 4.7 Demo Streamlit + hướng dẫn sử dụng (đã có bản nháp + sơ đồ luồng)"
+    },
+    {
+      "id": "T41",
+      "tieu_de": "T41 · Ráp file Báo cáo tiến độ lần 2 · hạn 11/11",
+      "nguoi": [
+        "Phúc"
+      ],
+      "bat_dau": "08/11",
+      "han": "11/11",
+      "ngay_cong": 1,
+      "dau_vao": "Mục 5.2, 5.3, 5.4, 4.6 đã viết",
+      "dau_ra": "BC_TienDo2_De26.docx",
+      "xong_khi": [
+        "(1) bảng mean ± std đủ 3 × 3 so với A, B",
+        "(2) ≥ 3 nhóm lỗi có ví dụ",
+        "(3) link/ảnh demo",
+        "(4) kết quả nâng cao bước đầu"
+      ],
+      "gan_voi": "BC2 mục (1)–(4)",
+      "nhan": [
+        "vai trò 1: baseline + zero-shot",
+        "viết báo cáo"
+      ],
+      "trang_thai": "Chưa làm",
+      "mo_ta_day_du": "Ráp file Báo cáo tiến độ lần 2 (đúng 4 mục của cô)"
+    },
+    {
+      "id": "T42",
+      "tieu_de": "T42 · Họp rà soát BC2 · hạn 10/11",
+      "nguoi": [
+        "Phúc",
+        "Hoàng Duyên",
+        "Đức Tâm",
+        "Yến Trinh"
+      ],
+      "bat_dau": "10/11",
+      "han": "10/11",
+      "ngay_cong": 0,
+      "dau_vao": "Bản ráp BC2 (41)",
+      "dau_ra": "Danh sách sửa cuối",
+      "xong_khi": [
+        "Cả nhóm đồng ý bản nộp"
+      ],
+      "gan_voi": "BC2",
+      "nhan": [
+        "cả nhóm",
+        "họp / nộp"
+      ],
+      "trang_thai": "Chưa làm",
+      "mo_ta_day_du": "Họp rà soát BC2 (45 phút)"
+    },
+    {
+      "id": "T43",
+      "tieu_de": "T43 · NỘP Báo cáo tiến độ lần 2 · hạn 12/11",
+      "nguoi": [
+        "Phúc"
+      ],
+      "bat_dau": "11/11",
+      "han": "12/11",
+      "ngay_cong": 0,
+      "dau_vao": "Bản đã sửa sau họp (42)",
+      "dau_ra": "File đã nộp",
+      "xong_khi": [
+        "Có xác nhận đã nộp gửi nhóm"
+      ],
+      "gan_voi": "BC2",
+      "nhan": [
+        "vai trò 1: baseline + zero-shot",
+        "họp / nộp"
+      ],
+      "trang_thai": "Chưa làm",
+      "mo_ta_day_du": "NỘP Báo cáo tiến độ lần 2"
+    }
+  ]
+}

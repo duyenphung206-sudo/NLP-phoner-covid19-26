@@ -1,18 +1,20 @@
-# results/ — kết quả của mọi lượt chạy
+# results/ — kết quả của mọi lượt chạy (file nhỏ, được commit)
 
-Mỗi lượt chạy = **1 file JSON** (nhỏ, được commit). Checkpoint mô hình KHÔNG để ở đây (lưu Google Drive chung).
+Checkpoint và mô hình KHÔNG để ở đây (Google Drive `NLP_De26/`). Dữ liệu gốc KHÔNG để ở đây.
 
-| File | Nội dung | Người | Trạng thái |
-|---|---|---|---|
-| `crf.json` | Baseline CRF (A) | Phúc | ✅ có (đưa lên ở T03) |
-| `zeroshot.json` | Zero-shot (B) | Phúc | ✅ có (đưa lên ở T03) |
-| `phobert_seed{42,123,2024}.json` | PhoBERT-base, bản mức từ | Hoàng Duyên | hạn 18/10 |
-| `xlmr_seed{42,123,2024}.json` | XLM-R-base, bản âm tiết | Đức Tâm | hạn 18/10 |
-| `mbert_seed{42,123,2024}.json` | mBERT-cased, bản âm tiết | Yến Trinh | hạn 18/10 |
-| `phobert_khong_tach_tu_seed{…}.json` | Nâng cao: PhoBERT không tách từ | Phúc | sau BC1 |
-| `bang_tong_hop.csv` | Bảng mean ± std do `src/aggregate.py` sinh ra | Hoàng Duyên | hạn 19/10 |
-| `phan_tich/` | File CSV phân tích lỗi, dự đoán (phục vụ phân tích lỗi chung) | mọi người | — |
+| Đường dẫn | Nội dung | Ai tạo (bằng gì) |
+|---|---|---|
+| `crf.json`, `zeroshot.json` | Baseline CRF (A), zero-shot (B) | Phúc (notebook 01) |
+| `phobert_seed{42,123,2024}.json` | PhoBERT-base mức từ — điểm test + dev, siêu tham số, môi trường, thời gian | Duyên (notebook 03 / `train_ner.py`) |
+| `xlmr_seed*.json`, `mbert_seed*.json` | XLM-R-base, mBERT-cased (âm tiết) | Tâm (04), Trinh (05) |
+| `phobert_khong_tach_tu_seed*.json` | Nâng cao: PhoBERT trên bản âm tiết | Phúc |
+| `du_doan/<khoa>_seed<seed>.json` | Nhãn dự đoán trên test (chỉ chuỗi nhãn, không có câu) → đầu vào phân tích lỗi | `train_ner.py` tự ghi |
+| `du_doan/du_doan_test.json` | Dự đoán test của CRF và zero-shot (Phúc chép từ `ket_qua/`) | Phúc |
+| `tim_kiem/<khoa>_{grid,random}.json` | Bảng Grid Search / Random Search trên dev (mục 4.3) | `train_ner.py` |
+| `eda/` | Bảng + hình khám phá dữ liệu (mục 3.1–3.2) | Tâm (`src/eda.py`) |
+| `tong_hop/` | Bảng mean ± std, theo seed, F1 từng loại, kiểm định, 2 biểu đồ (mục 5.3) | Duyên (`src/aggregate.py`) |
+| `phan_tich_loi/` | 5 nhóm lỗi × mô hình, nhầm loại, lỗi chung/riêng, ví dụ, hình (mục 5.4) | Tâm (`src/phan_tich_loi.py`) |
+| `_MAU_ket_qua_finetune.json` | Mẫu định dạng | — |
 
-**Định dạng bắt buộc:** giống [`_MAU_ket_qua_finetune.json`](_MAU_ket_qua_finetune.json) — 8 trường đầu lấy nguyên từ `metrics.tinh_metrics()` của Phúc, phần sau do `train_ner.py` ghi thêm (seed, model, siêu tham số, thời gian, phiên bản thư viện).
-
-**Chấm điểm:** `seqeval`, `mode="strict"`, `scheme=IOB2`, trên tập **test**; chọn checkpoint theo `f1_micro` trên **dev**.
+**Chấm điểm:** seqeval, `mode="strict"`, `scheme=IOB2`, trên **test**; chọn checkpoint theo `f1_micro` trên **dev**; std mẫu (n−1).
+File bắt đầu bằng `_` và lượt `thu_nhanh` bị `aggregate.py` bỏ qua.
