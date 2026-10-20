@@ -1,0 +1,9 @@
+# Thư viện cho demo Streamlit (chạy trên máy cá nhân bằng VS Code hoặc Streamlit Community Cloud)
+streamlit>=1.50
+torch
+transformers>=4.40
+sentencepiece          # tokenizer của XLM-R
+protobuf
+pandas
+underthesea>=6.8       # tách từ tiếng Việt dự phòng (khi máy không có Java)
+py_vncorenlp           # tách từ RDRSegmenter giống dữ liệu PhoNER (cần Java 8+)
