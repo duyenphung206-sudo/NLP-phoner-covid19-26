@@ -78,10 +78,12 @@ def main(dem_subword=False):
         n_am = sum(len(c) for c in am[t][0])
         n_tu = sum(len(c) for c in tu[t][0])
         n_o = sum(x == "O" for n in am[t][1] for x in n)
+        n_o_tu = sum(x == "O" for n in tu[t][1] for x in n)
         khong_nfc = sum(unicodedata.normalize("NFC", w) != w for c in tu_goc[t][0] for w in c)
         tq.append({"Tập": t, "Số câu": len(am[t][0]), "Số âm tiết": n_am, "Số từ (sau tách từ)": n_tu,
                    "Âm tiết / từ": round(n_am / n_tu, 3), "Số thực thể": sum(dem[t].values()),
-                   "% token nhãn O": round(100 * n_o / n_am, 1), "Token chưa ở dạng NFC": khong_nfc})
+                   "% âm tiết nhãn O": round(100 * n_o / n_am, 1),
+                   "% từ nhãn O": round(100 * n_o_tu / n_tu, 1), "Token chưa ở dạng NFC": khong_nfc})
     df_tq = pd.DataFrame(tq)
     ghi(df_tq, "bang_tong_quan")
 

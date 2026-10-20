@@ -67,8 +67,8 @@ def phan_loai_loi(vang, doan):
         if not cac_p:
             loi.append(("Bỏ sót", g, None))
             continue
-        # chọn dự đoán khớp nhất (ưu tiên: trùng biên > chồng lấn nhiều > cùng loại > đứng trước) -> kết quả cố định
-        p = max(cac_p, key=lambda p: ((p[1], p[2]) == (g[1], g[2]), min(g[2], p[2]) - max(g[1], p[1]), p[0] == g[0], -p[1]))
+        # giống cách của Phúc (notebook baseline): lấy dự đoán chồng lấn ĐỨNG TRƯỚC NHẤT trong câu
+        p = min(cac_p, key=lambda p: (p[1], p[2], p[0]))
         cung_bien, cung_loai = (g[1], g[2]) == (p[1], p[2]), g[0] == p[0]
         loi.append(("Sai loại" if cung_bien else "Sai biên" if cung_loai else "Sai cả hai", g, p))
     for p in sorted(doan - vang, key=lambda x: (x[1], x[2], x[0])):
@@ -107,7 +107,12 @@ def to_dam(cac_am_tiet, dau, cuoi):
 def main(seed=42, cac_khoa=("crf", "zeroshot", "phobert", "xlmr", "mbert"), so_vi_du=5):
     du_lieu = {"word": tai_du_lieu("word")["test"], "syllable": tai_du_lieu("syllable")["test"]}
     cau_am_tiet, nhan_am_tiet = du_lieu["syllable"]
-    vang = [thuc_the_am_tiet(n) for n in nhan_am_tiet]             # nhãn thật, quy về âm tiết
+    # Nhãn thật của ĐÚNG phiên bản mô hình dùng (mức từ hoặc âm tiết), rồi quy về vị trí âm tiết.
+    # (vài thực thể ở bản mức từ lệch biên so với bản âm tiết do tách từ -> chấm theo bản của chính mô hình,
+    #  khớp với số của seqeval và của notebook Phúc)
+    vang_theo_muc = {"syllable": [thuc_the_am_tiet(n) for n in nhan_am_tiet],
+                     "word": [thuc_the_am_tiet(n, c) for c, n in zip(*du_lieu["word"])]}
+    vang = vang_theo_muc["syllable"]
     os.makedirs(THU_MUC_RA, exist_ok=True)
 
     dem, nham_loai, loi_cua = {}, {}, {}
@@ -122,7 +127,7 @@ def main(seed=42, cac_khoa=("crf", "zeroshot", "phobert", "xlmr", "mbert"), so_v
         dem[khoa], nham_loai[khoa], loi_cua[khoa] = Counter(), Counter(), set()
         for i, nhan in enumerate(dd["du_doan"]):
             doan = thuc_the_am_tiet(nhan, cau_goc[i] if muc == "word" else None)
-            for nhom, g, p in phan_loai_loi(vang[i], doan):
+            for nhom, g, p in phan_loai_loi(vang_theo_muc[muc][i], doan):
                 dem[khoa][nhom] += 1
                 if nhom == "Sai loại":
                     nham_loai[khoa][(g[0], p[0])] += 1
