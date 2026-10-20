@@ -1,0 +1,70 @@
+{
+  "khoa_mo_hinh": "xlmr",
+  "kieu": "grid",
+  "so_cau_hinh": 6,
+  "so_epoch_moi_cau_hinh": 3,
+  "seed": 42,
+  "khong_gian": {
+    "learning_rate": [
+      2e-05,
+      3e-05,
+      5e-05
+    ],
+    "batch_size": [
+      16,
+      32
+    ]
+  },
+  "bang": [
+    {
+      "batch_size": 16,
+      "learning_rate": 5e-05,
+      "f1_micro_dev": 0.9525,
+      "f1_macro_dev": 0.9333,
+      "thoi_gian_giay": 347
+    },
+    {
+      "batch_size": 32,
+      "learning_rate": 5e-05,
+      "f1_micro_dev": 0.9469,
+      "f1_macro_dev": 0.9189,
+      "thoi_gian_giay": 178
+    },
+    {
+      "batch_size": 16,
+      "learning_rate": 3e-05,
+      "f1_micro_dev": 0.9466,
+      "f1_macro_dev": 0.9262,
+      "thoi_gian_giay": 296
+    },
+    {
+      "batch_size": 16,
+      "learning_rate": 2e-05,
+      "f1_micro_dev": 0.9392,
+      "f1_macro_dev": 0.8964,
+      "thoi_gian_giay": 175
+    },
+    {
+      "batch_size": 32,
+      "learning_rate": 3e-05,
+      "f1_micro_dev": 0.937,
+      "f1_macro_dev": 0.8805,
+      "thoi_gian_giay": 141
+    },
+    {
+      "batch_size": 32,
+      "learning_rate": 2e-05,
+      "f1_micro_dev": 0.9249,
+      "f1_macro_dev": 0.8499,
+      "thoi_gian_giay": 149
+    }
+  ],
+  "tot_nhat": {
+    "batch_size": 16,
+    "learning_rate": 5e-05,
+    "f1_micro_dev": 0.9525,
+    "f1_macro_dev": 0.9333,
+    "thoi_gian_giay": 347
+  },
+  "thu_nhanh": false
+}

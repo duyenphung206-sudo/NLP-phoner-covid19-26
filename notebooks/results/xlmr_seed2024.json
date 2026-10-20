@@ -1,0 +1,122 @@
+{
+  "ten_mo_hinh": "xlmr seed 2024",
+  "che_do_cham": "strict_IOB2",
+  "so_thuc_the": 11735,
+  "precision_micro": 0.9397,
+  "recall_micro": 0.95,
+  "f1_micro": 0.9448,
+  "f1_macro": 0.9288,
+  "f1_tung_loai": {
+    "PATIENT_ID": 0.9796,
+    "NAME": 0.9465,
+    "AGE": 0.9709,
+    "GENDER": 0.9785,
+    "JOB": 0.7663,
+    "LOCATION": 0.9451,
+    "ORGANIZATION": 0.8634,
+    "SYMPTOM_AND_DISEASE": 0.8707,
+    "TRANSPORTATION": 0.9794,
+    "DATE": 0.988
+  },
+  "so_cau_test_bi_cat": 0,
+  "khoa_mo_hinh": "xlmr",
+  "model": "xlm-roberta-base",
+  "muc_du_lieu": "muc_am_tiet",
+  "seed": 2024,
+  "best_epoch": 10.0,
+  "so_epoch_da_chay": 13.0,
+  "f1_micro_dev": 0.9523,
+  "f1_macro_dev": 0.9403,
+  "lich_su_dev": [
+    {
+      "epoch": 1.0,
+      "f1_micro": 0.8929,
+      "loss": 0.0983
+    },
+    {
+      "epoch": 2.0,
+      "f1_micro": 0.9188,
+      "loss": 0.1012
+    },
+    {
+      "epoch": 3.0,
+      "f1_micro": 0.9362,
+      "loss": 0.0785
+    },
+    {
+      "epoch": 4.0,
+      "f1_micro": 0.9487,
+      "loss": 0.0752
+    },
+    {
+      "epoch": 5.0,
+      "f1_micro": 0.9483,
+      "loss": 0.0864
+    },
+    {
+      "epoch": 6.0,
+      "f1_micro": 0.9442,
+      "loss": 0.0997
+    },
+    {
+      "epoch": 7.0,
+      "f1_micro": 0.9502,
+      "loss": 0.09
+    },
+    {
+      "epoch": 8.0,
+      "f1_micro": 0.9476,
+      "loss": 0.1084
+    },
+    {
+      "epoch": 9.0,
+      "f1_micro": 0.9503,
+      "loss": 0.1042
+    },
+    {
+      "epoch": 10.0,
+      "f1_micro": 0.9523,
+      "loss": 0.1015
+    },
+    {
+      "epoch": 11.0,
+      "f1_micro": 0.9502,
+      "loss": 0.111
+    },
+    {
+      "epoch": 12.0,
+      "f1_micro": 0.9514,
+      "loss": 0.1097
+    },
+    {
+      "epoch": 13.0,
+      "f1_micro": 0.951,
+      "loss": 0.1124
+    }
+  ],
+  "sieu_tham_so": {
+    "learning_rate": 5e-05,
+    "batch_size": 16,
+    "gradient_accumulation_steps": 1,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.1,
+    "max_length": 256,
+    "fp16": true,
+    "so_epoch_toi_da": 15,
+    "dung_som_sau": 3
+  },
+  "so_cau_bi_cat": {
+    "train": 1,
+    "dev": 0
+  },
+  "thoi_gian_train_giay": 838,
+  "gpu": "Tesla T4",
+  "moi_truong": "Colab · Tesla T4",
+  "thu_vien": {
+    "torch": "2.11.0+cu130",
+    "transformers": "5.18.0",
+    "seqeval": "1.2.2 (mã nguồn)"
+  },
+  "nguoi_chay": "Đức Tâm",
+  "thu_nhanh": false
+}
