@@ -3,7 +3,7 @@
 **Đồ án cuối kỳ môn Xử lý Ngôn ngữ Tự nhiên — Đề tài 26 · HUFLIT · HK1 2026–2027**
 
 So sánh 5 cách làm NER trên tin tức tiếng Việt về COVID-19 (10 loại thực thể: mã bệnh nhân, tuổi, địa điểm, tổ chức y tế…):
-**(A)** baseline CRF · **(B)** zero-shot bằng model NER có sẵn · **(C)** fine-tune PhoBERT, XLM-R, mBERT (mỗi kiến trúc 3 seed, báo cáo mean ± std) · **(D)** demo Gradio · **Nâng cao:** PhoBERT có và không có bước tách từ.
+**(A)** baseline CRF · **(B)** zero-shot bằng model NER có sẵn · **(C)** fine-tune PhoBERT, XLM-R, mBERT (mỗi kiến trúc 3 seed, báo cáo mean ± std) · **(D)** demo Streamlit · **Nâng cao:** PhoBERT có và không có bước tách từ.
 
 > 📌 **Mốc gần nhất: nộp Báo cáo tiến độ lần 1 ngày 22/10/2026.**
 > Xem tiến độ: [**Milestone BC1**](../../milestones) · [**Bảng Project**](../../projects) · [**Việc của tôi**](../../issues/assigned/@me) · [Kế hoạch chi tiết](docs/KE_HOACH_BC1.md)
@@ -26,7 +26,7 @@ So sánh 5 cách làm NER trên tin tức tiếng Việt về COVID-19 (10 loạ
 | 1 · Baseline (A) + Zero-shot (B) | Phúc | @… | CRF, zero-shot, `src/metrics.py`; sau BC1: Yêu cầu nâng cao |
 | 2 · Kiến trúc 1 — PhoBERT-base | Phùng Thị Hoàng Duyên | @duyenphung206-sudo | `src/train_ner.py` dùng chung, PhoBERT × 3 seed, tổng hợp kết quả |
 | 3 · Kiến trúc 2 — XLM-RoBERTa-base | Đức Tâm | @… | `src/data.py`, EDA, XLM-R × 3 seed, phân tích lỗi |
-| 4 · Kiến trúc 3 — mBERT-cased + Demo (D) | Yến Trinh | @… | Tóm tắt bài báo, mBERT × 3 seed, demo Gradio |
+| 4 · Kiến trúc 3 — mBERT-cased + Demo (D) | Yến Trinh | @… | Tóm tắt bài báo, mBERT × 3 seed, demo Streamlit |
 
 ## Kết quả hiện tại
 
@@ -53,7 +53,7 @@ nlp-de26-phoner-covid19/
 │   └── aggregate.py           # Gộp kết quả thành mean ± std (Hoàng Duyên)
 ├── notebooks/                 # Notebook Colab, đặt tên NN_noi-dung_ten.ipynb
 ├── results/                   # File JSON kết quả mỗi lượt chạy + phan_tich/
-├── app/                       # Demo Gradio (Yến Trinh, sau BC1)
+├── app/                       # Demo Streamlit (Yến Trinh, sau BC1)
 ├── reports/                   # Bản báo cáo đã nộp (BC1, BC2, cuối kỳ)
 ├── docs/                      # Hướng dẫn, quy ước, kế hoạch, biên bản họp
 ├── plan/                      # Kế hoạch dạng JSON để tạo Issue tự động
