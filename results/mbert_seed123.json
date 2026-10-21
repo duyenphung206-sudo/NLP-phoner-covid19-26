@@ -1,0 +1,130 @@
+{
+  "ten_mo_hinh": "mbert seed 123",
+  "che_do_cham": "strict_IOB2",
+  "so_thuc_the": 11735,
+  "precision_micro": 0.9399,
+  "recall_micro": 0.9472,
+  "f1_micro": 0.9435,
+  "f1_macro": 0.9264,
+  "f1_tung_loai": {
+    "PATIENT_ID": 0.9811,
+    "NAME": 0.943,
+    "AGE": 0.9777,
+    "GENDER": 0.9711,
+    "JOB": 0.7692,
+    "LOCATION": 0.9454,
+    "ORGANIZATION": 0.877,
+    "SYMPTOM_AND_DISEASE": 0.8448,
+    "TRANSPORTATION": 0.9691,
+    "DATE": 0.9853
+  },
+  "so_cau_test_bi_cat": 0,
+  "khoa_mo_hinh": "mbert",
+  "model": "bert-base-multilingual-cased",
+  "muc_du_lieu": "muc_am_tiet",
+  "seed": 123,
+  "best_epoch": 15.0,
+  "so_epoch_da_chay": 15.0,
+  "f1_micro_dev": 0.9508,
+  "f1_macro_dev": 0.9372,
+  "lich_su_dev": [
+    {
+      "epoch": 1.0,
+      "f1_micro": 0.9059,
+      "loss": 0.1108
+    },
+    {
+      "epoch": 2.0,
+      "f1_micro": 0.9243,
+      "loss": 0.1102
+    },
+    {
+      "epoch": 3.0,
+      "f1_micro": 0.9256,
+      "loss": 0.1096
+    },
+    {
+      "epoch": 4.0,
+      "f1_micro": 0.9413,
+      "loss": 0.0871
+    },
+    {
+      "epoch": 5.0,
+      "f1_micro": 0.9407,
+      "loss": 0.0875
+    },
+    {
+      "epoch": 6.0,
+      "f1_micro": 0.9416,
+      "loss": 0.0871
+    },
+    {
+      "epoch": 7.0,
+      "f1_micro": 0.9411,
+      "loss": 0.1071
+    },
+    {
+      "epoch": 8.0,
+      "f1_micro": 0.9474,
+      "loss": 0.1017
+    },
+    {
+      "epoch": 9.0,
+      "f1_micro": 0.9473,
+      "loss": 0.1095
+    },
+    {
+      "epoch": 10.0,
+      "f1_micro": 0.9459,
+      "loss": 0.113
+    },
+    {
+      "epoch": 11.0,
+      "f1_micro": 0.949,
+      "loss": 0.1155
+    },
+    {
+      "epoch": 12.0,
+      "f1_micro": 0.9483,
+      "loss": 0.1209
+    },
+    {
+      "epoch": 13.0,
+      "f1_micro": 0.9487,
+      "loss": 0.1168
+    },
+    {
+      "epoch": 14.0,
+      "f1_micro": 0.9499,
+      "loss": 0.1245
+    },
+    {
+      "epoch": 15.0,
+      "f1_micro": 0.9508,
+      "loss": 0.1242
+    }
+  ],
+  "sieu_tham_so": {
+    "learning_rate": 5e-05,
+    "batch_size": 16,
+    "gradient_accumulation_steps": 1,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.1,
+    "max_length": 256,
+    "fp16": true,
+    "so_epoch_toi_da": 15,
+    "dung_som_sau": 3
+  },
+  "so_cau_bi_cat": {
+    "train": 0,
+    "dev": 0
+  },
+  "thoi_gian_train_giay": 886,
+  "gpu": "Tesla T4",
+  "thu_vien": {
+    "torch": "2.11.0+cu130",
+    "transformers": "5.18.0"
+  },
+  "nguoi_chay": "Yến Trinh",
+  "thu_nhanh": false
+}
