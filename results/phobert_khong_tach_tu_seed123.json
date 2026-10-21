@@ -1,0 +1,97 @@
+{
+  "ten_mo_hinh": "phobert_khong_tach_tu seed 123",
+  "che_do_cham": "strict_IOB2",
+  "so_thuc_the": 11735,
+  "precision_micro": 0.9402,
+  "recall_micro": 0.9508,
+  "f1_micro": 0.9455,
+  "f1_macro": 0.9202,
+  "f1_tung_loai": {
+    "PATIENT_ID": 0.9821,
+    "NAME": 0.9456,
+    "AGE": 0.969,
+    "GENDER": 0.9612,
+    "JOB": 0.6916,
+    "LOCATION": 0.9468,
+    "ORGANIZATION": 0.8669,
+    "SYMPTOM_AND_DISEASE": 0.8826,
+    "TRANSPORTATION": 0.9692,
+    "DATE": 0.9871
+  },
+  "so_cau_test_bi_cat": 0,
+  "khoa_mo_hinh": "phobert_khong_tach_tu",
+  "model": "vinai/phobert-base",
+  "muc_du_lieu": "muc_am_tiet",
+  "seed": 123,
+  "best_epoch": 5.0,
+  "so_epoch_da_chay": 8.0,
+  "f1_micro_dev": 0.9537,
+  "f1_macro_dev": 0.9345,
+  "lich_su_dev": [
+    {
+      "epoch": 1.0,
+      "f1_micro": 0.9255,
+      "loss": 0.0939
+    },
+    {
+      "epoch": 2.0,
+      "f1_micro": 0.9401,
+      "loss": 0.0794
+    },
+    {
+      "epoch": 3.0,
+      "f1_micro": 0.9428,
+      "loss": 0.0759
+    },
+    {
+      "epoch": 4.0,
+      "f1_micro": 0.9519,
+      "loss": 0.0802
+    },
+    {
+      "epoch": 5.0,
+      "f1_micro": 0.9537,
+      "loss": 0.0791
+    },
+    {
+      "epoch": 6.0,
+      "f1_micro": 0.9535,
+      "loss": 0.0873
+    },
+    {
+      "epoch": 7.0,
+      "f1_micro": 0.9527,
+      "loss": 0.0895
+    },
+    {
+      "epoch": 8.0,
+      "f1_micro": 0.9532,
+      "loss": 0.0936
+    }
+  ],
+  "sieu_tham_so": {
+    "learning_rate": 5e-05,
+    "batch_size": 16,
+    "gradient_accumulation_steps": 1,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.0,
+    "max_length": 256,
+    "fp16": true,
+    "so_epoch_toi_da": 15,
+    "dung_som_sau": 3
+  },
+  "so_cau_bi_cat": {
+    "train": 0,
+    "dev": 0
+  },
+  "thoi_gian_train_giay": 117,
+  "gpu": "NVIDIA GeForce RTX 4070 SUPER",
+  "moi_truong": "Máy cá nhân · NVIDIA GeForce RTX 4070 SUPER",
+  "thu_vien": {
+    "torch": "2.14.1+cu130",
+    "transformers": "5.18.0",
+    "seqeval": "1.2.2 (mã nguồn)"
+  },
+  "nguoi_chay": "Phúc",
+  "thu_nhanh": false
+}
