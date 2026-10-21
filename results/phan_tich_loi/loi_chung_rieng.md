@@ -1,0 +1,5 @@
+- Thực thể thật bị **mọi** mô hình (PhoBERT, XLM-R, mBERT) làm sai: **349**
+- Chỉ riêng PhoBERT sai: 64 (tổng PhoBERT sai 511)
+- Chỉ riêng XLM-R sai: 102 (tổng XLM-R sai 632)
+- Chỉ riêng mBERT sai: 149 (tổng mBERT sai 655)
+- Loại thực thể hay bị cả 3 mô hình cùng sai: LOCATION (120), SYMPTOM_AND_DISEASE (96), ORGANIZATION (53), PATIENT_ID (27), JOB (17)
