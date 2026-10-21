@@ -1,0 +1,132 @@
+{
+  "ten_mo_hinh": "phobert_khong_tach_tu seed 2024",
+  "che_do_cham": "strict_IOB2",
+  "so_thuc_the": 11735,
+  "precision_micro": 0.9467,
+  "recall_micro": 0.9536,
+  "f1_micro": 0.9502,
+  "f1_macro": 0.9337,
+  "f1_tung_loai": {
+    "PATIENT_ID": 0.9823,
+    "NAME": 0.9525,
+    "AGE": 0.9794,
+    "GENDER": 0.9689,
+    "JOB": 0.7839,
+    "LOCATION": 0.9508,
+    "ORGANIZATION": 0.8866,
+    "SYMPTOM_AND_DISEASE": 0.879,
+    "TRANSPORTATION": 0.9668,
+    "DATE": 0.9868
+  },
+  "so_cau_test_bi_cat": 0,
+  "khoa_mo_hinh": "phobert_khong_tach_tu",
+  "model": "vinai/phobert-base",
+  "muc_du_lieu": "muc_am_tiet",
+  "seed": 2024,
+  "best_epoch": 13.0,
+  "so_epoch_da_chay": 15.0,
+  "f1_micro_dev": 0.9567,
+  "f1_macro_dev": 0.9427,
+  "lich_su_dev": [
+    {
+      "epoch": 1.0,
+      "f1_micro": 0.9276,
+      "loss": 0.0923
+    },
+    {
+      "epoch": 2.0,
+      "f1_micro": 0.9461,
+      "loss": 0.072
+    },
+    {
+      "epoch": 3.0,
+      "f1_micro": 0.9483,
+      "loss": 0.0731
+    },
+    {
+      "epoch": 4.0,
+      "f1_micro": 0.9484,
+      "loss": 0.0738
+    },
+    {
+      "epoch": 5.0,
+      "f1_micro": 0.9515,
+      "loss": 0.0904
+    },
+    {
+      "epoch": 6.0,
+      "f1_micro": 0.9538,
+      "loss": 0.0825
+    },
+    {
+      "epoch": 7.0,
+      "f1_micro": 0.9526,
+      "loss": 0.0892
+    },
+    {
+      "epoch": 8.0,
+      "f1_micro": 0.9548,
+      "loss": 0.0915
+    },
+    {
+      "epoch": 9.0,
+      "f1_micro": 0.9541,
+      "loss": 0.0882
+    },
+    {
+      "epoch": 10.0,
+      "f1_micro": 0.9562,
+      "loss": 0.0955
+    },
+    {
+      "epoch": 11.0,
+      "f1_micro": 0.9557,
+      "loss": 0.096
+    },
+    {
+      "epoch": 12.0,
+      "f1_micro": 0.9563,
+      "loss": 0.0967
+    },
+    {
+      "epoch": 13.0,
+      "f1_micro": 0.9567,
+      "loss": 0.1015
+    },
+    {
+      "epoch": 14.0,
+      "f1_micro": 0.9567,
+      "loss": 0.1004
+    },
+    {
+      "epoch": 15.0,
+      "f1_micro": 0.9564,
+      "loss": 0.1006
+    }
+  ],
+  "sieu_tham_so": {
+    "learning_rate": 5e-05,
+    "batch_size": 16,
+    "gradient_accumulation_steps": 1,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.0,
+    "max_length": 256,
+    "fp16": true,
+    "so_epoch_toi_da": 15,
+    "dung_som_sau": 3
+  },
+  "so_cau_bi_cat": {
+    "train": 0,
+    "dev": 0
+  },
+  "thoi_gian_train_giay": 223,
+  "gpu": "NVIDIA GeForce RTX 4070 SUPER",
+  "moi_truong": "Máy cá nhân · NVIDIA GeForce RTX 4070 SUPER",
+  "thu_vien": {
+    "torch": "2.14.1+cu130",
+    "transformers": "5.18.0",
+    "seqeval": "1.2.2 (mã nguồn)"
+  },
+  "nguoi_chay": "Phúc",
+  "thu_nhanh": false
+}
